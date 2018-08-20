@@ -215,7 +215,7 @@ end
 function util.splitToWords(text)
     local wlist = {}
     for word in util.gsplit(text, "[%s%p]+", true) do
-        -- if space splitted word contains CJK characters
+        -- if space split word contains CJK characters
         if util.hasCJKChar(word) then
             -- split with CJK characters
             for char in util.gsplit(word, "[\228-\234\192-\255][\128-\191]+", true) do
@@ -592,7 +592,7 @@ function util.htmlToPlainTextIfHtml(text)
         is_html = true
     else
         -- no <tag> found
-        -- but we may meet some text badly twicely encoded html containing "&lt;br&gt;"
+        -- but we may encounter some text html incorrectly encoded twice, containing "&lt;br&gt;"
         local nb_encoded_tags
         _, nb_encoded_tags = text:gsub("&lt;%a+&gt;", "")
         if nb_encoded_tags > 0 then

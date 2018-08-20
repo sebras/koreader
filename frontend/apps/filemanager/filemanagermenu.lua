@@ -194,7 +194,7 @@ function FileManagerMenu:setUpdateItemTable()
                                 purgeDir(cachedir)
                             end
                             lfs.mkdir(cachedir)
-                            -- Also remove from Cache objet references to
+                            -- Also remove from Cache object references to
                             -- the cache files we just deleted
                             local Cache = require("cache")
                             Cache.cached = {}

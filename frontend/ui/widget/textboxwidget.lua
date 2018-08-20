@@ -189,7 +189,7 @@ function TextBoxWidget:_splitCharWidthList()
                 self.line_num_to_image = {}
             end
             if (self.lines_per_page and ln % self.lines_per_page == 1) -- first line of a scrolled page
-            or (self.lines_per_page == nil and ln == 1) then  -- first line if not scrollabled
+            or (self.lines_per_page == nil and ln == 1) then  -- first line if not scrollable
                 image_num = image_num + 1
                 if image_num <= #self.images then
                     local image = self.images[image_num]
@@ -249,10 +249,10 @@ function TextBoxWidget:_splitCharWidthList()
                 prev_c = adjusted_idx-1 >= 1 and self.charlist[adjusted_idx-1] or false
             end
             if adjusted_idx == offset or adjusted_idx == idx then
-                -- either a very long english word occupying more than one line,
+                -- either a very long English word occupying more than one line,
                 -- or the excessive char is itself splittable:
                 -- we let that excessive char for next line
-                if adjusted_idx == offset then -- let the fact a long word was splitted be known
+                if adjusted_idx == offset then -- let the fact a long word was split be known
                     self.has_split_inside_word = true
                 end
                 end_offset = idx - 1
@@ -271,7 +271,7 @@ function TextBoxWidget:_splitCharWidthList()
                 idx = adjusted_idx + 1
             end
             if self.justified then
-                -- this line was splitted and can be justified
+                -- this line was split and can be justified
                 -- we record in idx_pad the nb of pixels to add to each char
                 -- to make the whole line justified. This also helps hold
                 -- position accuracy.
@@ -384,7 +384,7 @@ function TextBoxWidget:_renderText(start_row_idx, end_row_idx)
             pen_x = (self.width - line.width)
         end
             --@todo don't use kerning for monospaced fonts.    (houqp)
-            -- refert to cb25029dddc42693cc7aaefbe47e9bd3b7e1a750 in master tree
+            -- refer to cb25029dddc42693cc7aaefbe47e9bd3b7e1a750 in master tree
         RenderText:renderUtf8Text(self._bb, pen_x, y, self.face, self:_getLineText(line), true, self.bold, self.fgcolor, nil, self:_getLinePads(line))
         y = y + self.line_height_px
     end
@@ -913,7 +913,7 @@ function TextBoxWidget:moveCursorToCharPos(charpos)
                 self._bb:blitFrom(self.cursor_restore_bb, self.cursor_restore_x, self.cursor_restore_y,
                     0, 0, self.cursor_line.dimen.w, self.cursor_line.dimen.h)
                 -- remember current values for use in the setDirty funcs, as
-                -- we will have overriden them when these are called
+                -- we will have overridden them when these are called
                 restore_x = self.cursor_restore_x
                 restore_y = self.cursor_restore_y
                 if not CURSOR_COMBINE_REGIONS then
@@ -1111,7 +1111,7 @@ function TextBoxWidget:onHoldWord(callback, ges)
                 local words = util.splitToWords(self:_getLineText(line))
                 local probe_idx = char_start
                 for _, w in ipairs(words) do
-                    -- +1 for word separtor
+                    -- +1 for word separator
                     probe_idx = probe_idx + #util.splitToChars(w)
                     if idx <= probe_idx - 1 then
                         callback(w)

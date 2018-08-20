@@ -252,7 +252,7 @@ function ZSync:onZyreEnter(id, name, header, endpoint)
         local host = endpoint:match("(.*:)") or "*:"
         local fmq_server_endpoint = host..port
         DEBUG("connect filemq server at", fmq_server_endpoint)
-        -- wait for filemq server setup befor connecting
+        -- wait for filemq server setup before connecting
         UIManager:scheduleIn(2, function()
             filemq.fmq_client_set_resync(self.filemq_client, true)
             filemq.fmq_client_subscribe(self.filemq_client, "/")

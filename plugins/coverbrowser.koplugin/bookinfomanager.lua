@@ -248,7 +248,7 @@ function BookInfoManager:saveSetting(key, value)
         value = "Y"
     end
     stmt:bind(key, value)
-    stmt:step() -- commited
+    stmt:step() -- committed
     stmt:clearbind():reset() -- cleanup
     -- Reload settings, so we may get (or not if it failed) what we just saved
     self:loadSettings()
@@ -379,7 +379,7 @@ function BookInfoManager:extractBookInfo(filepath, cover_specs)
     for num, col in ipairs(BOOKINFO_COLS_SET) do
         self.set_stmt:bind1(num, dbrow[col])
     end
-    self.set_stmt:step() -- commited
+    self.set_stmt:step() -- committed
     self.set_stmt:clearbind():reset() -- get ready for next query
     if tried_enough then
         return -- Last insert done for this book, we're giving up
@@ -487,7 +487,7 @@ function BookInfoManager:setBookInfoProperties(filepath, props)
             v = nil
         end
         stmt:bind(v, directory, filename)
-        stmt:step() -- commited
+        stmt:step() -- committed
         stmt:clearbind():reset() -- cleanup
     end
 end
@@ -498,7 +498,7 @@ function BookInfoManager:deleteBookInfo(filepath)
     local query = "DELETE FROM bookinfo WHERE directory=? AND filename=?"
     local stmt = self.db_conn:prepare(query)
     stmt:bind(directory, filename)
-    stmt:step() -- commited
+    stmt:step() -- committed
     stmt:clearbind():reset() -- cleanup
 end
 
@@ -520,7 +520,7 @@ function BookInfoManager:removeNonExistantEntries()
     local stmt = self.db_conn:prepare(query)
     for i=1, #bcids_to_remove do
         stmt:bind(bcids_to_remove[i])
-        stmt:step() -- commited
+        stmt:step() -- committed
         stmt:clearbind():reset() -- cleanup
     end
     return T(_("Removed %1 / %2 entries from cache."), #bcids_to_remove, #bcids)

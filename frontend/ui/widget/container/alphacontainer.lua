@@ -64,7 +64,7 @@ function AlphaContainer:paintTo(bb, x, y)
         self.background_bb:blitFrom(bb, 0, 0, x, y)
     end
 
-    -- now have our childs paint to the private blitbuffer
+    -- now have our children paint to the private blitbuffer
     -- TODO: should we clean before painting?
     self[1]:paintTo(private_bb, 0, 0)
 

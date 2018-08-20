@@ -335,7 +335,7 @@ function MosaicMenuItem:init()
         }
     end
 
-    -- We now build the minimal widget container that won't change after udpate()
+    -- We now build the minimal widget container that won't change after update()
 
     -- As done in MenuItem
     -- for compatibility with keyboard navigation
@@ -361,7 +361,7 @@ function MosaicMenuItem:init()
 end
 
 function MosaicMenuItem:update()
-    -- We will be a disctinctive widget whether we are a directory,
+    -- We will be a distinctive widget whether we are a directory,
     -- a known file with image / without image, or a not yet known file
     local widget
 
@@ -533,7 +533,7 @@ function MosaicMenuItem:update()
                     }
                 }
             end
-            -- In case we got a blitbuffer and didnt use it (ignore_cover, wikipedia), free it
+            -- In case we got a blitbuffer and didn't use it (ignore_cover, wikipedia), free it
             if bookinfo.cover_bb and not cover_bb_used then
                 bookinfo.cover_bb:free()
             end
@@ -715,7 +715,7 @@ function MosaicMenu:_recalculateDimen()
     }
 
     -- Create or replace corner_mark if needed
-    -- 1/12 (larger) or 1/16 (smaller) of cover looks allright
+    -- 1/12 (larger) or 1/16 (smaller) of cover looks alright
     local mark_size = math.floor(math.min(self.item_width, self.item_height) / 16)
     if mark_size ~= corner_mark_size then
         corner_mark_size = mark_size

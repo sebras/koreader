@@ -268,8 +268,8 @@ local KeyValuePage = InputContainer:new{
     -- index for the first item to show
     show_page = 1,
     use_top_page_count = false,
-    -- aligment of value when key or value overflows its reserved width (for
-    -- now: 50%): "left" (stick to key), "right" (stick to scren right border)
+    -- alignment of value when key or value overflows its reserved width (for
+    -- now: 50%): "left" (stick to key), "right" (stick to screen right border)
     value_overflow_align = "left",
 }
 

@@ -101,7 +101,7 @@
 --        numeric entities only currently - could be extended
 --        at runtime if suitable DTD parser added elements
 --        to table (see obj._ENTITIES). May also be possible
---        to expand multibyre entities for UTF-8 only
+--        to expand multibyte entities for UTF-8 only
 --
 --      * errorHandler
 --
@@ -141,7 +141,7 @@
 --  History
 --  =======
 --  Added parameter parseAttributes (boolean) in xmlParser.parse method
---  If true (default value), tag attributtes are parsed.
+--  If true (default value), tag attributes are parsed.
 --  by Manoel Campos da Silva Filho
 --  http://manoelcampos.com
 --  http://about.me/manoelcampos
@@ -304,7 +304,7 @@ local xmlParser = function(handler)
                     -- End tag
                     if self._handler.endtag then
                         if attrs then
-                            -- Shouldnt have any attributes in endtag
+                            -- Shouldn't have any attributes in endtag
                             self:_err(string.format("%s (/%s)",
                                              self._errstr.endTagErr,
                                              tagname)
@@ -341,7 +341,7 @@ local xmlParser = function(handler)
         end
     end
 
-    -- Private attribures/functions
+    -- Private attributes/functions
 
     obj._handler    = handler
     obj._stack      = {}
@@ -456,7 +456,7 @@ local xmlParser = function(handler)
     ---Parses a string representing a tag
     --@param s String containing tag text
     --@return Returns a string containing the tagname and a table attrs
-    --containing the atributtes of tag
+    --containing the attributes of tag
     obj._parseTag = function(self,s)
         local attrs = {}
         local tagname = string.gsub(s,self._TAG,'%1')

@@ -372,7 +372,7 @@ function ReaderWikipedia:initLanguages(word)
                 addLanguage(lang)
             end
         end
-        -- add english anyway, so we have at least one language
+        -- add English anyway, so we have at least one language
         addLanguage("en")
     end
 end
@@ -402,7 +402,7 @@ function ReaderWikipedia:lookupWikipedia(word, box, get_fullpage, forced_lang)
         lang = self.wiki_languages[1]
     end
     logger.dbg("lookup word:", word, box, get_fullpage)
-    -- no need to clean word if get_fullpage, as it is the exact wikipetia page title
+    -- no need to clean word if get_fullpage, as it is the exact Wikipedia page title
     if word and not get_fullpage then
         -- escape quotes and other funny characters in word
         word = self:cleanSelection(word)

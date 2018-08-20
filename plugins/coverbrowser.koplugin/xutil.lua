@@ -35,7 +35,7 @@ end
 -- Not provided by base/thirdparty/lua-ljsqlite3/init.lua
 -- Add a timeout to a lua-ljsqlite3 connection
 -- We need that if we have multiple processes accessing the same
--- SQLite db for reading or writting (read lock and write lock can't be
+-- SQLite db for reading or writing (read lock and write lock can't be
 -- obtained at the same time, so waiting & retry is needed)
 -- SQLite will retry getting a lock every 1ms to 100ms for
 -- the timeout_ms given here

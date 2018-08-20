@@ -195,8 +195,8 @@ function KoptInterface:getSemiAutoBBox(doc, pageno)
 end
 
 --[[
-get cached koptcontext for centain page. if context doesn't exist in cache make
-new context and reflow the src page immediatly, or wait background thread for
+get cached koptcontext for certain page. if context doesn't exist in cache make
+new context and reflow the src page immediately, or wait background thread for
 reflowed context.
 --]]
 function KoptInterface:getCachedContext(doc, pageno)
@@ -368,7 +368,7 @@ end
 
 --[[
 inherited from common document interface render reflowed page into cache in
-background thread. this method returns immediatly leaving the precache flag on
+background thread. this method returns immediately leaving the precache flag on
 in context. subsequent usage of this context should wait for the precache flag
 off by calling self:waitForContext(kctx)
 --]]
@@ -584,7 +584,7 @@ function KoptInterface:getOCRWord(doc, pageno, wbox)
 end
 
 --[[
-get word from OCR in reflew page
+get word from OCR in reflow page
 --]]
 function KoptInterface:getReflewOCRWord(doc, pageno, rect)
     self.ocr_lang = doc.configurable.doc_language
@@ -1068,12 +1068,12 @@ local function all_matches(boxes, pattern, caseInsensitive)
     local plist = {}
     -- split utf-8 characters
     for words in pattern:gmatch("[\32-\127\192-\255]+[\128-\191]*") do
-        -- split space seperated words
+        -- split space separated words
         for word in words:gmatch("[^%s]+") do
             table.insert(plist, caseInsensitive and word:lower() or word)
         end
     end
-    -- return mached word indices from index i, j
+    -- return matched word indices from index i, j
     local function match(i, j)
         local pindex = 1
         local matched_indices = {}

@@ -135,7 +135,7 @@ function RenderImage:renderGifImageDataWithGifLib(data, size, want_frames, width
                 end
             end
         })
-        -- so, also set this method, so that ImageViewer can explicitely
+        -- so, also set this method, so that ImageViewer can explicitly
         -- call it onClose.
         frames.free = function()
             logger.dbg("frames.free() called, closing GifDocument")

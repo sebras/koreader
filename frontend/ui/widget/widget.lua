@@ -18,7 +18,7 @@ local Widget = EventListener:new()
 
 --[[--
 Use this method to define a subclass widget class that's inherited from a
-base class widget. It only setups the metabale (or prototype chain) and will
+base class widget. It only setups the metatable (or prototype chain) and will
 not initiate a real instance, i.e. call self:init().
 
 @tparam Widget baseclass
@@ -32,7 +32,7 @@ function Widget:extend(baseclass)
 end
 
 --[[--
-Use this method to initiatie a instance of a class, don't use it for class
+Use this method to initiate a instance of a class, don't use it for class
 definition because it also calls self:init().
 
 @tparam Widget o

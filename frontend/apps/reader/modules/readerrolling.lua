@@ -673,7 +673,7 @@ function ReaderRolling:_gotoPos(new_pos, do_dim_area)
         self.view:resetDimArea()
     end
     self.ui.document:gotoPos(new_pos)
-    -- The current page we get in scroll mode may be a bit innacurate,
+    -- The current page we get in scroll mode may be a bit inaccurate,
     -- but we give it anyway to onPosUpdate so footer and statistics can
     -- keep up with page.
     self.ui:handleEvent(Event:new("PosUpdate", new_pos, self.ui.document:getCurrentPage()))

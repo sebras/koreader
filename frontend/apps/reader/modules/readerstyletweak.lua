@@ -197,7 +197,7 @@ function TweakInfoWidget:onSelect()
     return true
 end
 
--- Ordering function for tweaks when appened to css_test.
+-- Ordering function for tweaks when appended to css_test.
 -- The order needs to be consistent for crengine's stylesheet change
 -- detection code to not invalidate cache across loadings.
 local function tweakOrdering(l, r)
@@ -291,7 +291,7 @@ function ReaderStyleTweak:updateCssText(apply)
                 end
                 -- We could store what's been read into tweak.css to avoid
                 -- re-reading it, but this will allow a user to experiment
-                -- wihout having to restart KOReader
+                -- without having to restart KOReader
             end
             css = css:gsub("^%s+", ""):gsub("%s+$", "")
             table.insert(css_snippets, css)
@@ -419,7 +419,7 @@ You can enable individual tweaks on this book with a tap, or view more details a
                     local enabled, g_enabled = self:isTweakEnabled(item.id)
                     if enabled then
                         if g_enabled then
-                            -- if globaly enabled, mark it as disabled
+                            -- if globally enabled, mark it as disabled
                             -- for this document only
                             self.doc_tweaks[item.id] = false
                         else

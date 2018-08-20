@@ -29,7 +29,7 @@ local MovableContainer = InputContainer:new{
     alpha = nil,
 
     -- Move threshold (if move distance less than that, considered as a Hold
-    -- with no movement, used for reseting move to original position)
+    -- with no movement, used for resetting move to original position)
     move_threshold = Screen:scaleBySize(5),
 
     -- Events to ignore (ie: ignore_events={"hold", "hold_release"})
@@ -210,7 +210,7 @@ function MovableContainer:onMovableSwipe(_, ges)
 end
 
 function MovableContainer:onMovableTouch(_, ges)
-    -- First "pan" event may already be outsise us, we need to
+    -- First "pan" event may already be outside us, we need to
     -- remember any "touch" event on us prior to "pan"
     logger.dbg("MovableContainer:onMovableTouch", ges)
     if ges.pos:intersectWith(self.dimen) then

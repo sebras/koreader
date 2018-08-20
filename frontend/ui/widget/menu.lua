@@ -959,7 +959,7 @@ function Menu:updateItems(select_number)
 end
 
 --[[
-    the itemnumber paramter determines menu page number after switching item table
+    the itemnumber parameter determines menu page number after switching item table
     1. itemnumber >= 0
         the page number is calculated with items per page
     2. itemnumber == nil

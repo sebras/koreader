@@ -11,9 +11,9 @@ local BookInfoManager = require("bookinfomanager")
 
 -- This is a kind of "base class" for both MosaicMenu and ListMenu.
 -- It implements the common code shared by these, mostly the non-UI
--- work : the updating of items and the management of backgrouns jobs.
+-- work : the updating of items and the management of background jobs.
 --
--- Here are defined the common overriden methods of Menu:
+-- Here are defined the common overridden methods of Menu:
 --    :updateItems(select_number)
 --    :onCloseWidget()
 --    :onSwipe(arg, ges_ev)
@@ -452,7 +452,7 @@ function CoverMenu:onCloseWidget()
     Menu.onCloseWidget(self)
 end
 
--- Overriden just to allow full refresh (useful with images)
+-- Overridden just to allow full refresh (useful with images)
 function CoverMenu:onSwipe(arg, ges_ev)
     if ges_ev.direction == "west" then
         self:onNextPage()

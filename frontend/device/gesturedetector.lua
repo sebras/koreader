@@ -69,10 +69,10 @@ local GestureDetector = {
     states = {},
     track_ids = {},
     tev_stacks = {},
-    -- latest feeded touch event in each slots
+    -- latest fed touch event for each slot
     last_tevs = {},
     first_tevs = {},
-    -- detecting status on each slots
+    -- detecting status for each slot
     detectings = {},
     -- for single/double tap
     last_taps = {},

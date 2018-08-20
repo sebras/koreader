@@ -18,7 +18,7 @@ function ReaderHighlight:init()
 end
 
 function ReaderHighlight:setupTouchZones()
-    -- deligate gesture listener to readerui
+    -- delegate gesture listener to readerui
     self.ges_events = {}
     self.onGesture = nil
 

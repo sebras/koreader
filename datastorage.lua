@@ -1,4 +1,4 @@
--- need low-level mechnism to detect android to avoid recursive dependency
+-- need low-level mechanism to detect android to avoid recursive dependency
 local isAndroid, android = pcall(require, "android")
 local lfs = require("libs/libkoreader-lfs")
 

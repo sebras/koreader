@@ -218,7 +218,7 @@ Do you want to create an empty database?
                 end,
             })
         end
-    else  -- first time convertion to sqlite database
+    else  -- first time conversion to sqlite database
         self.convert_to_db = true
         if not conn:exec("pragma table_info('book');") then
             if #ReadHistory.hist > 0 then

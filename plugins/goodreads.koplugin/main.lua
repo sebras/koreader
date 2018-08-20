@@ -161,7 +161,7 @@ function Goodreads:saveSettings(fields)
 end
 
 -- search_type = all - search all
--- search_type = author - serch book by author
+-- search_type = author - search book by author
 -- search_type = title - search book by title
 function Goodreads:search(search_type)
     local title_header

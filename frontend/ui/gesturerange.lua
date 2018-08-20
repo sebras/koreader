@@ -5,7 +5,7 @@ local GestureRange = {
     ges = nil,
     -- spatial range limits the gesture emitting position
     range = nil,
-    -- temproal range limits the gesture emitting rate
+    -- temporal range limits the gesture emitting rate
     rate = nil,
     -- scale limits of this gesture
     scale = nil,
@@ -23,7 +23,7 @@ function GestureRange:match(gs)
         return false
     end
     if self.range then
-        -- sometimes widget dimenension is not available when creating a gesturerage
+        -- sometimes widget dimension is not available when creating a gesture range
         -- for some action, now we accept a range function that will be later called
         -- and the result of which will be used to check gesture match
         -- e.g. range = function() return self.dimen end
@@ -42,7 +42,7 @@ function GestureRange:match(gs)
 
     if self.rate then
         -- This filed restraints the upper limit rate(matches per second).
-        -- It's most useful for e-ink devices with less powerfull CPUs and
+        -- It's most useful for e-ink devices with less powerful CPUs and
         -- screens that cannot handle gesture events that otherwise will be
         -- generated
         local last_time = self.last_time or TimeVal:new{}

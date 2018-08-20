@@ -21,7 +21,7 @@ local Document = {
 
     GAMMA_NO_GAMMA = 1.0,
 
-    -- override bbox from orignal page's getUsedBBox
+    -- override bbox from original page's getUsedBBox
     bbox = {},
 
     -- flag to show whether the document was opened successfully
@@ -104,7 +104,7 @@ function Document:isEdited()
     return self.is_edited
 end
 
--- discard change will set is_edited flag to false and implematation of Document
+-- discard change will set is_edited flag to false and implementation of Document
 -- should check the is_edited flag before writing document
 function Document:discardChange()
     self.is_edited = false

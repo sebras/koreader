@@ -239,7 +239,7 @@ describe("UIManager spec", function()
     end)
 
     it("should handle stack change when checking for active widgets", function()
-        -- senario 1: 2nd widget removes the 3rd widget in the stack
+        -- scenario 1: 2nd widget removes the 3rd widget in the stack
         local call_signals = {0, 0, 0}
         UIManager._window_stack = {
             {
@@ -275,7 +275,7 @@ describe("UIManager spec", function()
         assert.is.same(call_signals[2], 0)
         assert.is.same(call_signals[3], 1)
 
-        -- senario 2: top widget removes itself
+        -- scenario 2: top widget removes itself
         call_signals = {0, 0, 0}
         UIManager._window_stack = {
             {

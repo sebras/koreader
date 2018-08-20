@@ -152,7 +152,7 @@ DDICT_FONT_SIZE = 20
 FRONTLIGHT_SENSITIVITY_DECREASE = 2
 
 -- Normally, KOReader will present file lists sorted in case insensitive manner
--- when presenting an alphatically sorted list. So the Order is "A, b, C, d".
+-- when presenting an alphabetically sorted list. So the Order is "A, b, C, d".
 -- You can switch to a case sensitive sort ("A", "C", "b", "d") by disabling
 -- insensitive sort
 DALPHA_SORT_CASE_INSENSITIVE = true
@@ -177,8 +177,8 @@ SEARCH_PATH = true
 -- Light parameter for Kobo
 KOBO_LIGHT_ON_START = -2           -- -1, -2 or 0-100.
                                    -- -1 uses previous koreader session saved brightness
-                                   -- -2 uses 'Kobo eReader.conf' brighness,
-                                   -- other sets light on start to a fix brighness
+                                   -- -2 uses 'Kobo eReader.conf' brightness,
+                                   -- other sets light on start to a fix brightness
 KOBO_SYNC_BRIGHTNESS_WITH_NICKEL = true  -- Save brightness set in KOreader
                                          -- with nickel's 'Kobo eReader.conf'
 

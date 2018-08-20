@@ -147,13 +147,13 @@ function ListMenuItem:init()
         }
     end
 
-    -- We now build the minimal widget container that won't change after udpate()
+    -- We now build the minimal widget container that won't change after update()
 
     -- As done in MenuItem
     -- for compatibility with keyboard navigation
     -- (which does not seem to work well when multiple pages,
     -- even with classic menu)
-    self.underline_h = 1 -- smaller than default (3) to not shift our vertical aligment
+    self.underline_h = 1 -- smaller than default (3) to not shift our vertical alignment
     self._underline_container = UnderlineContainer:new{
         vertical_align = "top",
         padding = 0,
@@ -173,7 +173,7 @@ function ListMenuItem:init()
 end
 
 function ListMenuItem:update()
-    -- We will be a disctinctive widget whether we are a directory,
+    -- We will be a distinctive widget whether we are a directory,
     -- a known file with image / without image, or a not yet known file
     local widget
 
@@ -295,7 +295,7 @@ function ListMenuItem:update()
                     }
                 end
             end
-            -- In case we got a blitbuffer and didnt use it (ignore_cover), free it
+            -- In case we got a blitbuffer and didn't use it (ignore_cover), free it
             if bookinfo.cover_bb and not cover_bb_used then
                 bookinfo.cover_bb:free()
             end
@@ -315,7 +315,7 @@ function ListMenuItem:update()
                 fileinfo_str = self.mandatory .. "  " .. fileinfo_str
             end
             if bookinfo._no_provider then
-                -- for unspported files: don't show extension on the right,
+                -- for unsupported files: don't show extension on the right,
                 -- keep it in filename
                 filename_without_suffix = filename
                 fileinfo_str = self.mandatory

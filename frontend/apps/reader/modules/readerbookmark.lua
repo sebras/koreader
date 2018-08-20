@@ -239,7 +239,7 @@ function ReaderBookmark:onShowBookmark()
         bm_menu,
     }
 
-    -- buid up menu widget method as closure
+    -- build up menu widget method as closure
     local bookmark = self
     function bm_menu:onMenuChoice(item)
         bookmark.ui.link:addCurrentLocationToStack()

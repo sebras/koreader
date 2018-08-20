@@ -71,7 +71,7 @@ function ReaderMenu:init()
 end
 
 function ReaderMenu:onReaderReady()
-    -- deligate gesture listener to readerui
+    -- delegate gesture listener to readerui
     self.ges_events = {}
     self.onGesture = nil
     if not Device:isTouchDevice() then return end

@@ -112,7 +112,7 @@ end
 
 -- This method will be called in onSetDimensions handler
 function ReaderPaging:setupTouchZones()
-    -- deligate gesture listener to readerui
+    -- delegate gesture listener to readerui
     self.ges_events = {}
     self.onGesture = nil
 
@@ -505,7 +505,7 @@ function ReaderPaging:onInitScrollPageStates(orig_mode)
         blank_area:setSizeTo(self.view.dimen)
         while blank_area.h > 0 do
             local offset = Geom:new{}
-            -- caculate position in current page
+            -- calculate position in current page
             if self.current_page == self.orig_page then
                 local page_area = self.view:getPageArea(
                     self.view.state.page,
@@ -877,7 +877,7 @@ function ReaderPaging:onGotoPageRel(diff)
         if math.abs(panned_y) < 1 then
             panned_y = 0
         end
-        -- singal panning update
+        -- single panning update
         self.view:PanningUpdate(panned_x, panned_y)
         -- update dime area in ReaderView
         if self.show_overlap_enable then

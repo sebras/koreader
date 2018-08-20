@@ -29,7 +29,7 @@ local Kobo = Generic:new{
     touch_switch_xy = true,
     -- most Kobos have also mirrored X coordinates
     touch_mirrored_x = true,
-    -- enforce protrait mode on Kobos:
+    -- enforce portrait mode on Kobos:
     isAlwaysPortrait = yes,
     -- the internal storage mount point users can write to
     internal_storage_mount_point = "/mnt/onboard/",
@@ -367,7 +367,7 @@ function Kobo:initEventAdjustHooks()
     if self.touch_mirrored_x then
         self.input:registerEventAdjustHook(
             self.input.adjustTouchMirrorX,
-            -- FIXME: what if we change the screen protrait mode?
+            -- FIXME: what if we change the screen portrait mode?
             self.screen:getWidth()
         )
     end
@@ -576,7 +576,7 @@ function Kobo:suspend()
         logger.info("wakeup count: $(cat /sys/power/wakeup_count)")
     end
 
-    -- Print tke kernel log since our attempt to sleep...
+    -- Print the kernel log since our attempt to sleep...
     --dmesg -c
 
     --]]
@@ -617,7 +617,7 @@ function Kobo:resume()
     -- HACK: wait a bit (0.1 sec) for the kernel to catch up
     util.usleep(100000)
     -- cf. #1862, I can reliably break IR touch input on resume...
-    -- cf. also #1943 for the rationale behind applying this workaorund in every case...
+    -- cf. also #1943 for the rationale behind applying this workaround in every case...
     f = io.open("/sys/devices/virtual/input/input1/neocmd", "w")
     if f ~= nil then
         f:write("a\n")

@@ -150,7 +150,7 @@ local function showIdTable(data)
 end
 
 -- search_type = all - search all
--- search_type = author - serch book by author
+-- search_type = author - search book by author
 -- search_type = title - search book by title
 function GoodreadsApi:showData(search_text, search_type, page, goodreads_key)
     local stats = {}

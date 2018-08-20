@@ -22,7 +22,7 @@ local TextEditor = WidgetContainer:new{
     settings = nil, -- loaded only when needed
     -- how many to display in menu (10x3 pages minus our 3 default menu items):
     history_menu_size = 27,
-    history_keep_size = 60, -- hom many to keep in settings
+    history_keep_size = 60, -- how many to keep in settings
     normal_font = "x_smallinfofont",
     monospace_font = "infont",
     min_file_size_warn = 200000, -- warn/ask when opening files bigger than this
@@ -43,11 +43,11 @@ function TextEditor:loadSettings()
     self.font_face = self.settings:readSetting("font_face") or self.normal_font
     self.font_size = self.settings:readSetting("font_size") or 20 -- x_smallinfofont default size
     -- The font settings could be saved in G_reader_setting if we want them
-    -- to be re-used by default by InputDialog (on certain conditaions,
+    -- to be re-used by default by InputDialog (on certain conditions,
     -- when fullscreen or condensed or add_nav_bar...)
     --
-    -- Allow users to set their prefered font manually in text_editor.lua
-    -- (sadly, not via TextEditor itself, as they would be overriden on close)
+    -- Allow users to set their preferred font manually in text_editor.lua
+    -- (sadly, not via TextEditor itself, as they would be overridden on close)
     if self.settings:readSetting("normal_font") then
         self.normal_font = self.settings:readSetting("normal_font")
     end
@@ -311,7 +311,7 @@ function TextEditor:checkEditFile(file_path, from_history, possibly_new_file)
             self:editFile(file_path, readonly)
         end
     else -- File does not exist
-        -- Try to create it just to check if writting to it later is possible
+        -- Try to create it just to check if writing to it later is possible
         local file, err = io.open(file_path, "wb")
         if file then
             -- Clean it, we'll create it again on Save, and allow closing

@@ -121,7 +121,7 @@ function Device:init()
                     logger.dbg("Resizing screen to", new_size)
 
                     -- try to catch as many flies as we can
-                    -- this means we can't just return one ScreenResize or SetDimensons event
+                    -- this means we can't just return one ScreenResize or SetDimensions event
                     UIManager:broadcastEvent(Event:new("SetDimensions", new_size))
                     UIManager:broadcastEvent(Event:new("ScreenResize", new_size))
                     -- @TODO toggle this elsewhere based on ScreenResize?

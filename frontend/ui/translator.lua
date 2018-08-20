@@ -19,7 +19,7 @@ local Translator = {
        oe = "UTF-8",
        hl = "en",
        tl = "en",
-       sl = nil, -- we don't specify source languagae to detect language
+       sl = nil, -- we don't specify source language to detect language
    },
    default_lang = "en",
 }

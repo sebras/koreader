@@ -623,7 +623,7 @@ function ReaderUI:dealWithLoadDocumentFailure()
     -- Sadly, we had to delay loadDocument() to about now, so we only
     -- know now this document is not valid or recognized.
     -- We can't do much more than crash properly here (still better than
-    -- going on and segfaulting when calling other methods on unitiliazed
+    -- going on and segfaulting when calling other methods on uninitialized
     -- _document)
     -- We must still remove it from lastfile and history (as it has
     -- already been added there) so that koreader don't crash again

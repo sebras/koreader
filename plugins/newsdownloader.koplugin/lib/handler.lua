@@ -84,7 +84,7 @@
 --
 --  Usage
 --  =====
---      Pased as delegate in xmlParser constructor and called
+--      Parsed as delegate in xmlParser constructor and called
 --      as callback by xmlParser:parse(xml) method.
 --
 --      See textxml.lua for examples
@@ -104,7 +104,7 @@
 --@author Paul Chakravarti (paulc@passtheaardvark.com)<p/>
 
 
----Handler to generate a string prepresentation of a table
+---Handler to generate a string representation of a table
 --Convenience function for printHandler (Does not support recursive tables).
 --@param t Table to be parsed
 --@returns Returns a string representation of table

@@ -199,7 +199,7 @@ function UIManager:show(widget, refreshtype, refreshregion, x, y)
 
     self._running = true
     local window = {x = x or 0, y = y or 0, widget = widget}
-    -- put this window on top of the toppest non-modal window
+    -- put this window on top of the non-modal window closest to the top
     for i = #self._window_stack, 0, -1 do
         local top_window = self._window_stack[i]
         -- skip modal window
@@ -221,7 +221,7 @@ function UIManager:show(widget, refreshtype, refreshregion, x, y)
 end
 
 --[[--
-Unregisters a widget.
+Unregister a widget.
 
 For refreshtype & refreshregion see description of setDirty().
 ]]
@@ -451,7 +451,7 @@ dbg:guard(UIManager, 'setDirty',
     end)
 
 -- Clear the full repaint & refreshes queues.
--- NOTE: Beware! This doesn't take any prisonners!
+-- NOTE: Beware! This doesn't take any prisoners!
 --       You shouldn't have to resort to this unless in very specific circumstances!
 --       plugins/coverbrowser.koplugin/covermenu.lua building a franken-menu out of buttondialogtitle & buttondialog
 --       and wanting to avoid inheriting their original paint/refresh cycle being a prime example.
@@ -666,7 +666,7 @@ function UIManager:_refresh(mode, region)
     end
     -- special case: "partial" refreshes
     -- will get promoted every self.FULL_REFRESH_COUNT refreshes
-    -- since _refresh can be called mutiple times via setDirty called in
+    -- since _refresh can be called multiple times via setDirty called in
     -- different widgets before a real screen repaint, we should make sure
     -- refresh_count is incremented by only once at most for each repaint
     -- NOTE: Ideally, we'd only check for "partial"" w/ no region set (that neatly narrows it down to just the reader).

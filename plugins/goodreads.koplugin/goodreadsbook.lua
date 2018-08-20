@@ -176,7 +176,7 @@ function GoodreadsBook:genBookInfoGroup()
             text_pages
         }
     )
-    -- relesse date
+    -- release date
     local text_release = TextWidget:new{
         text = T(_("Release date: %1"), self.dates.release),
         face = self.small_font_face,

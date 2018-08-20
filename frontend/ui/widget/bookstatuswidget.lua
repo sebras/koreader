@@ -32,7 +32,7 @@ local T = require("ffi/util").template
 local stats_book = {}
 
 --[[
---Save into sdr folder addtional section
+--Save into sdr folder additional section
 ["summary"] = {
     ["rating"] = 5,
     ["note"] = "Some text",

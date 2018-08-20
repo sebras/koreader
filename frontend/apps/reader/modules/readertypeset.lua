@@ -27,12 +27,12 @@ function ReaderTypeset:onReadSettings(config)
     if self.embedded_fonts == nil then
         -- default to enable embedded fonts
         -- note that it's a bit confusing here:
-        -- global settins store 0/1, while document settings store false/true
+        -- global settings store 0/1, while document settings store false/true
         -- we leave it that way for now to maintain backwards compatibility
         local global = G_reader_settings:readSetting("copt_embedded_fonts")
         self.embedded_fonts = (global == nil or global == 1) and true or false
     end
-    -- As this is new, call it only when embedded_fonts are explicitely disabled
+    -- As this is new, call it only when embedded_fonts are explicitly disabled
     -- self.ui.document:setEmbeddedFonts(self.embedded_fonts and 1 or 0)
     if not self.embedded_fonts then
         self.ui.document:setEmbeddedFonts(0)
@@ -42,7 +42,7 @@ function ReaderTypeset:onReadSettings(config)
     if self.embedded_css == nil then
         -- default to enable embedded CSS
         -- note that it's a bit confusing here:
-        -- global settins store 0/1, while document settings store false/true
+        -- global settings store 0/1, while document settings store false/true
         -- we leave it that way for now to maintain backwards compatibility
         local global = G_reader_settings:readSetting("copt_embedded_css")
         self.embedded_css = (global == nil or global == 1) and true or false
@@ -96,7 +96,7 @@ function ReaderTypeset:onToggleEmbeddedFonts(toggle)
 end
 
 -- June 2018: epub.css has been cleaned to be more conforming to HTML specs
--- and to not include class name based styles (with conditional compatiblity
+-- and to not include class name based styles (with conditional compatibility
 -- styles for previously opened documents). It should be usable on all
 -- HTML based documents, except FB2 which has some incompatible specs.
 -- These other css files have not been updated in the same way, and are

@@ -159,7 +159,7 @@ function CoverBrowser:addToMainMenu(menu_items)
 
     if not self.full_featured then
         -- Make the generic items directly as 1st level items,
-        -- and use alternate name for main menu, not mentionning
+        -- and use alternate name for main menu, not mentioning
         -- "display mode" that are not available
         menu_items.filemanager_display_mode = {
             text = _("File browser settings"),
@@ -431,7 +431,7 @@ end
 
 function CoverBrowser:setupFileManagerDisplayMode(display_mode)
     if not DISPLAY_MODES[display_mode] then
-        display_mode = nil -- unknow mode, fallback to classic
+        display_mode = nil -- unknown mode, fallback to classic
     end
     if init_done and display_mode == filemanager_display_mode then -- no change
         return
@@ -566,7 +566,7 @@ end
 
 function CoverBrowser:setupHistoryDisplayMode(display_mode)
     if not DISPLAY_MODES[display_mode] then
-        display_mode = nil -- unknow mode, fallback to classic
+        display_mode = nil -- unknown mode, fallback to classic
     end
     if init_done and display_mode == history_display_mode then -- no change
         return

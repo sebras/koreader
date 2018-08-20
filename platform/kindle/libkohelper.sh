@@ -22,14 +22,14 @@ case "${kmodel}" in
         SCREEN_X_RES=1088 # NOTE: Yes, 1088, not 1072 or 1080...
         SCREEN_Y_RES=1448
         EIPS_X_RES=16
-        EIPS_Y_RES=24 # Manually mesured, should be accurate.
+        EIPS_Y_RES=24 # Manually measured, should be accurate.
         ;;
     "24" | "1B" | "1D" | "1F" | "1C" | "20" | "D4" | "5A" | "D5" | "D6" | "D7" | "D8" | "F2" | "17" | "60" | "F4" | "F9" | "62" | "61" | "5F")
         # PaperWhite & PaperWhite 2
         SCREEN_X_RES=768 # NOTE: Yes, 768, not 758...
         SCREEN_Y_RES=1024
         EIPS_X_RES=16
-        EIPS_Y_RES=24 # Manually mesured, should be accurate.
+        EIPS_Y_RES=24 # Manually measured, should be accurate.
         ;;
     "C6" | "DD")
         # KT2
@@ -113,7 +113,7 @@ eips_print_bottom_centered() {
     kh_eips_strlen="${#kh_eips_string}"
 
     # Add the right amount of left & right padding, since we're centered, and eips doesn't trigger a full refresh,
-    # so we'll have to padd our string with blank spaces to make sure two consecutive messages don't run into each other
+    # so we'll have to pad our string with blank spaces to make sure two consecutive messages don't run into each other
     kh_padlen="$(((EIPS_MAXCHARS - kh_eips_strlen) / 2))"
 
     # Left padding...

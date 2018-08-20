@@ -7,7 +7,7 @@ local _ = require("gettext")
 
 local ReaderBack = EventListener:new{
     location_stack = {},
-    -- a limit not intended to be a practical limit but just a failsafe
+    -- a limit not intended to be a practical limit but just a fail-safe
     max_stack = 5000,
     -- allow for disabling back history, and having Back key
     -- quit immediately (useful for some developers)

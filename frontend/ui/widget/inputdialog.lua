@@ -52,7 +52,7 @@ To add |Save|Close| buttons, use:
         if closing then
             UIManager:nextTick( stuff to do when InputDialog closed if any )
         end
-        return nil -- sucess, default notification shown
+        return nil -- success, default notification shown
         return true, success_notif_text
         return false, error_infomsg_text
     end

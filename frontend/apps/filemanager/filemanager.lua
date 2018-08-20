@@ -127,7 +127,7 @@ function FileManager:init()
     local g_show_hidden = G_reader_settings:readSetting("show_hidden")
     local show_hidden = g_show_hidden == nil and DSHOWHIDDENFILES or g_show_hidden
     local file_chooser = FileChooser:new{
-        -- remeber to adjust the height when new item is added to the group
+        -- remember to adjust the height when new item is added to the group
         path = self.root_path,
         focused_path = self.focused_file,
         collate = G_reader_settings:readSetting("collate") or "strcoll",

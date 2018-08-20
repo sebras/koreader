@@ -38,7 +38,7 @@ function CreDocument:zipContentExt(fname)
     if std_out then
         for line in std_out:lines() do
             local size, ext = string.match(line, "%s+(%d+)%s+.+%.([^.]+)")
-            -- return the extention
+            -- return the extension
             if size and ext then return string.lower(ext) end
         end
     end
@@ -98,12 +98,12 @@ function CreDocument:init()
     local file_type = string.lower(string.match(self.file, ".+%.([^.]+)"))
     if file_type == "zip" then
         -- NuPogodi, 20.05.12: read the content of zip-file
-        -- and return extention of the 1st file
+        -- and return extension of the 1st file
         file_type = self:zipContentExt(self.file) or "unknown"
     end
 
     -- June 2018: epub.css has been cleaned to be more conforming to HTML specs
-    -- and to not include class name based styles (with conditional compatiblity
+    -- and to not include class name based styles (with conditional compatibility
     -- styles for previously opened documents). It should be usable on all
     -- HTML based documents, except FB2 which has some incompatible specs.
     -- The other css files (htm.css, rtf.css...) have not been updated in the
@@ -468,7 +468,7 @@ function CreDocument:setRenderDPI(value)
 end
 
 function CreDocument:setRenderScaleFontWithDPI(toggle)
-    -- wheter to scale font with DPI, or keep the current size
+    -- whether to scale font with DPI, or keep the current size
     logger.dbg("CreDocument: set render scale font with dpi", toggle)
     self._document:setIntProperty("crengine.render.scale.font.with.dpi", toggle)
 end

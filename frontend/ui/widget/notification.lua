@@ -101,7 +101,7 @@ function Notification:onTapClose()
     UIManager:close(self)
     -- If timeout (usually 1s or 2s), let it propagate so an underlying
     -- widget can process the tap whether it's done at 1.9s or 2.1s
-    -- If no timout, don't propagate as this tap is most probably meant
+    -- If no timeout, don't propagate as this tap is most probably meant
     -- at dismissing the notification
     if not self.timeout then
         return true

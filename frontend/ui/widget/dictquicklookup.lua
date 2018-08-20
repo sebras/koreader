@@ -909,7 +909,7 @@ function DictQuickLookup:lookupWikipedia(get_fullpage)
         -- is the exact title of the full wikipedia page
         word = self.lookupword
     else
-        -- we use the original word that was querried
+        -- we use the original word that was queried
         word = self.word
     end
     self:resyncWikiLanguages()

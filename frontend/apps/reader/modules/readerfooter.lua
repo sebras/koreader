@@ -151,7 +151,7 @@ function ReaderFooter:init()
     }
 
     if self.settings.disabled then
-        -- footer featuren disabled completely, stop initialization now
+        -- footer feature disabled completely, stop initialization now
         self:disableFooter()
         return
     end

@@ -154,7 +154,7 @@ table, tcaption, tr, th, td { border: black solid 1px; border-collapse: collapse
             title = _("Make images full width"),
             description = _("Useful for books containing only images, when they are smaller than your screen. May stretch images in some cases."),
             -- This helped me once with a book. Will mess with aspect ratio
-            -- when images have a style="width: NNpx; heigh: NNpx"
+            -- when images have a style="width: NNpx; height: NNpx"
             css = [[
 img {
    text-align: center !important;

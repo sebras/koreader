@@ -621,7 +621,7 @@ function ReaderLink:onGoToLatestBookmark(ges)
     if latest_bookmark then
         if self.ui.document.info.has_pages then
             -- self:onGotoLink() needs something with a page attribute.
-            -- we need to substract 1 to bookmark page, as links start from 0
+            -- we need to subtract 1 to bookmark page, as links start from 0
             -- and onGotoLink will add 1 - we need a fake_link (with a single
             -- page attribute) so we don't touch the bookmark itself
             local fake_link = {}

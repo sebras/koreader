@@ -151,7 +151,7 @@ function ReaderCropping:exitPageCrop(confirmed)
     self.view.outer_page_color = self.orig_view_bgcolor
     -- restore reflow mode
     self.document.configurable.text_wrap = self.orig_reflow_mode
-    -- restore view dimens
+    -- restore view dimensions
     self.ui:handleEvent(Event:new("RestoreDimensions", self.orig_view_dimen))
     self.view:recalculate()
     -- Exiting should have the same look and feel with entering.

@@ -138,7 +138,7 @@ Creates a new TimeVal object based on the current time.
     local TimeVal = require("ui/timeval")
     local tv_start = TimeVal:now()
     -- Do some stuff.
-    -- You can add and substract `TimeVal` objects.
+    -- You can add and subtract `TimeVal` objects.
     local tv_duration = TimeVal:now() - tv_start
 
 @treturn TimeVal

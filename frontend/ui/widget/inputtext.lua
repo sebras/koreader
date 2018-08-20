@@ -227,7 +227,7 @@ function InputText:init()
 end
 
 -- This will be called when we add or del chars, as we need to recreate
--- the text widget to have the new text splittted into possibly different
+-- the text widget to have the new text split into possibly different
 -- lines than before
 function InputText:initTextBox(text, char_added)
     self.text = text

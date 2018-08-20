@@ -53,7 +53,7 @@ local _ = require("gettext")
 --         For string executable, several predefined values indicate the
 --         internal errors. E.g. 223: the binary crashes. 222: the output is
 --         invalid. 127: the command is invalid. 255: the command timed out.
---         Typically, consumers can use following states instead of hardcodeing
+--         Typically, consumers can use following states instead of hardcoding
 --         the error codes.
 -- exception: error, the error returned from function executable. Not available
 --            for string executable.

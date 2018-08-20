@@ -10,7 +10,7 @@ Example:
     local sample
     sample = InfoMessage:new{
         text = _("Some message"),
-        -- Usually the hight of a InfoMessage is self-adaptive. If this field is actively set, a
+        -- Usually the height of a InfoMessage is self-adaptive. If this field is actively set, a
         -- scrollbar may be shown. This variable is usually helpful to display a large chunk of text
         -- which may exceed the height of the screen.
         height = Screen:scaleBySize(400),
@@ -51,7 +51,7 @@ local InfoMessage = InputContainer:new{
     width = nil,  -- The width of the InfoMessage. Keep it nil to use default value.
     height = nil,  -- The height of the InfoMessage. If this field is set, a scrollbar may be shown.
     -- The image shows at the left of the InfoMessage. Image data will be freed
-    -- by InfoMessage, caller should not manage its lifecycle
+    -- by InfoMessage, caller should not manage its life-cycle
     image = nil,
     image_width = nil,  -- The image width if image is used. Keep it nil to use original width.
     image_height = nil,  -- The image height if image is used. Keep it nil to use original height.

@@ -218,10 +218,10 @@ function TouchMenuBar:init()
     self.bar_icon_group = HorizontalGroup:new{}
     -- build up image widget for menu icon bar
     self.icon_widgets = {}
-    -- hold icon seperators
+    -- hold icon separators
     self.icon_seps = {}
     -- the start_seg for first icon_widget should be 0
-    -- we asign negative here to offset it in the loop
+    -- we assign negative here to offset it in the loop
     local start_seg = -icon_sep_width
     local end_seg = start_seg
     -- self.width is the screen width
@@ -634,7 +634,7 @@ function TouchMenu:switchMenuTab(tab_num)
         self.tab_item_table[tab_num].callback()
     end
     if self.cur_tab ~= tab_num then
-        -- it's like getting a new menu everytime we switch tab!
+        -- it's like getting a new menu every time we switch tab!
         self.page = 1
         -- clear item table stack
         self.item_table_stack = {}

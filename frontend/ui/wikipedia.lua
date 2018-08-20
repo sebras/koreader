@@ -53,7 +53,7 @@ local Wikipedia = {
    wiki_phtml_params = {
        action = "parse",
        format = "json",
-       -- we only need the following informations
+       -- we only need the following information
        prop = "text|sections|displaytitle|revid",
        -- page = nil, -- text to lookup, will be added below
        -- disabletoc = "", -- if we want to remove toc IN html
@@ -65,7 +65,7 @@ local Wikipedia = {
    wiki_images_params = { -- same as previous one, with just text html
        action = "parse",
        format = "json",
-       -- we only need the following informations
+       -- we only need the following information
        prop = "text",
        -- page = nil, -- text to lookup, will be added below
        redirects = "",
@@ -375,7 +375,7 @@ function Wikipedia:getFullPageImages(wiki_title, lang)
                     end
                     local width = tonumber(timg:match([[width="([^"]*)"]]))
                     local height = tonumber(timg:match([[height="([^"]*)"]]))
-                    -- Ignore img without width and height, which should exlude
+                    -- Ignore img without width and height, which should exclude
                     -- javascript maps and other unsupported stuff
                     if width and height then
                         -- Images in the html we got seem to be x4.5 the size of
@@ -571,7 +571,7 @@ function Wikipedia:addImages(page, lang, more_images, image_size_factor, hi_imag
 end
 
 -- UTF8 of unicode geometrical shapes we can use to replace
--- the "=== title ===" of wkipedia plaintext pages
+-- the "=== title ===" of Wikipedia plain text pages
 -- These chosen ones are available in most fonts (prettier symbols
 -- exist in unicode, but are available in a few fonts only) and
 -- have a quite consistent size/weight in all fonts.
@@ -611,7 +611,7 @@ end
 
 
 -- UTF8 of unicode geometrical shapes we'll prepend to wikipedia section headers,
--- to help identifying hierarchy (othewise, the small font size differences helps).
+-- to help identifying hierarchy (otherwise, the small font size differences helps).
 -- Best if identical to the ones used above for prettifying full plain text page.
 -- These chosen ones are available in most fonts (prettier symbols
 -- exist in unicode, but are available in a few fonts only) and
@@ -1114,7 +1114,7 @@ li.gallerybox div.gallerytext p {
     -- crengine does not support the <math> family of tags for displaying formulas,
     -- which results in lots of space taken by individual character in the formula, each
     -- on a single line...
-    -- Also, usally, these <math> tags are followed by a <img> tag pointing to a
+    -- Also, usually, these <math> tags are followed by a <img> tag pointing to a
     -- SVG version of the formula, that we took care earlier to change the url to
     -- point to a PNG version of the formula (which is still not perfect, as it does
     -- not adjust to the current html font size, but it is at least readable).
@@ -1126,7 +1126,7 @@ li.gallerybox div.gallerytext p {
     -- We need to remove any "?somekey=somevalue" from url (a real "?" part of the
     -- wiki_page word would be encoded as %3F, but ReaderLink would get it decoded and
     -- would not be able to distinguish them).
-    -- Do that first (need to be done first) for full links to other language wikipedias
+    -- Do that first (need to be done first) for full links to other language Wikipedia's
     local cleanOtherLangWikiPageTitle = function(wiki_lang, wiki_page)
         wiki_page = wiki_page:gsub("%?.*", "")
         return string.format([[href="https://%s.wikipedia.org/wiki/%s"]], wiki_lang, wiki_page)
@@ -1139,7 +1139,7 @@ li.gallerybox div.gallerytext p {
     end
     html = html:gsub([[href="/wiki/([^"]*)"]], cleanWikiPageTitle)
 
-    -- Remove href from links to non existant wiki page so they are not clickable :
+    -- Remove href from links to non existent wiki page so they are not clickable :
     -- <a href="/w/index.php?title=PageTitle&amp;action=edit&amp;redlink=1" class="new" title="PageTitle">PageTitle____on</a>
     -- (removal of the href="" will make them non clickable)
     html = html:gsub([[<a[^>]* class="new"[^>]*>]], [[<a class="newwikinonexistent">]])
@@ -1219,7 +1219,7 @@ li.gallerybox div.gallerytext p {
             end
             logger.dbg("Getting img ", src)
             local success, content = getUrlContent(src)
-            -- success, content = getUrlContent(src..".unexistant") -- to simulate failure
+            -- success, content = getUrlContent(src..".nonexistent") -- to simulate failure
             if success then
                 logger.dbg("success, size:", #content)
             else

@@ -135,7 +135,7 @@ function Send2Ebook:process()
 
     local connection_url = FtpApi:generateUrl(ftp_config.address, util.urlEncode(ftp_config.username), util.urlEncode(ftp_config.password))
 
-    local ftp_files_table = FtpApi:listFolder(connection_url .. ftp_config.folder, ftp_config.folder) --args looks strange but otherwise resonse with invalid paths
+    local ftp_files_table = FtpApi:listFolder(connection_url .. ftp_config.folder, ftp_config.folder) --args looks strange but otherwise response with invalid paths
 
     if not ftp_files_table then
       info = InfoMessage:new{ text = T(_("Could not get file list for server: %1, user: %2, folder: %3"), ftp_config.address, ftp_config.username, ftp_config.folder) }

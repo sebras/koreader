@@ -189,7 +189,7 @@ local function isInFontsBlacklist(f)
 end
 
 function Font:_readList(target, dir)
-    -- lfs.dir non-exsitent directory will give error, weird!
+    -- lfs.dir non-existent directory will give error, weird!
     local ok, iter, dir_obj = pcall(lfs.dir, dir)
     if not ok then return end
     for f in iter, dir_obj do

@@ -460,13 +460,13 @@ function ReaderDictionary:cleanSelection(text)
     -- some cleanup is still needed for selection we get from other engines
     -- (example: pdf selection "qu’autrefois," will be cleaned to "autrefois")
     --
-    -- Replace extended quote (included in the general puncturation range)
+    -- Replace extended quote (included in the general punctuation range)
     -- with plain ascii quote (for french words like "aujourd’hui")
     text = string.gsub(text, "\xE2\x80\x99", "'") -- U+2019 (right single quotation mark)
     -- Strip punctuation characters around selection
     text = util.stripePunctuations(text)
-    -- Strip some common english grammatical construct
-    text = string.gsub(text, "'s$", '') -- english possessive
+    -- Strip some common English grammatical construct
+    text = string.gsub(text, "'s$", '') -- English possessive
     -- Strip some common french grammatical constructs
     text = string.gsub(text, "^[LSDMNTlsdmnt]'", '') -- french l' s' t'...
     text = string.gsub(text, "^[Qq][Uu]'", '') -- french qu'
@@ -504,7 +504,7 @@ function ReaderDictionary:startSdcv(word, dict_names, fuzzy_search)
     -- another one in data/dict_ext if it exists
     -- We could put in data/dict_ext dictionaries with a great number of words
     -- but poor definitions as a fall back. If these were in data/dict,
-    -- they would prevent fuzzy searches in other dictories with better
+    -- they would prevent fuzzy searches in other directories with better
     -- definitions, and masks such results. This way, we can get both.
     local dict_dirs = {self.data_dir}
     local dict_ext = self.data_dir.."_ext"
@@ -552,7 +552,7 @@ function ReaderDictionary:startSdcv(word, dict_names, fuzzy_search)
                 -- and a really bad selected text, can take up to 10 seconds.
                 -- It is nice to be able to cancel it when noticing wrong text was selected.
                 -- As we have a lookup_progress_msg (that can be used to catch a tap
-                -- and trigger cancellation), and because sdcv starts outputing its
+                -- and trigger cancellation), and because sdcv starts outputting its
                 -- output only at the end when it has done its work, we can
                 -- use Trapper:dismissablePopen() to cancel it as long as we are waiting
                 -- for output.

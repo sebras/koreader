@@ -129,7 +129,7 @@ function InputContainer:registerTouchZones(zones)
     local screen_width, screen_height = Screen:getWidth(), Screen:getHeight()
     if not self.touch_zone_dg then self.touch_zone_dg = DepGraph:new{} end
     for _, zone in ipairs(zones) do
-        -- override touch zone with the same id to support reregistration
+        -- override touch zone with the same id to support re-registration
         if self._zones[zone.id] then
             self.touch_zone_dg:removeNode(zone.id)
         end

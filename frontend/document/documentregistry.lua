@@ -229,7 +229,7 @@ end
 function DocumentRegistry:openDocument(file, provider)
     -- force a GC, so that any previous document used memory can be reused
     -- immediately by this new document without having to wait for the
-    -- next regular gc. The second call may help reclaming more memory.
+    -- next regular gc. The second call may help reclaiming more memory.
     collectgarbage()
     collectgarbage()
     if not self.registry[file] then
