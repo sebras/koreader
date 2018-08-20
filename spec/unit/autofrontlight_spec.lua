@@ -106,7 +106,7 @@ describe("AutoFrontlight widget tests", function()
         assert.are.equal(2, Device:getPowerDevice().frontlight)
     end)
 
-    it("should turn on frontlight at the begining", function()
+    it("should turn on frontlight at the beginning", function()
         Device.brightness = 0
         AutoFrontlight = class:new()
         MockTime:increase(2)
@@ -114,7 +114,7 @@ describe("AutoFrontlight widget tests", function()
         assert.are.equal(2, Device:getPowerDevice().frontlight)
     end)
 
-    it("should turn off frontlight at the begining", function()
+    it("should turn off frontlight at the beginning", function()
         Device.brightness = 3
         AutoFrontlight = class:new()
         MockTime:increase(2)

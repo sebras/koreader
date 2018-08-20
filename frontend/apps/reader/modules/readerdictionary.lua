@@ -424,7 +424,7 @@ local function tidyMarkup(results)
                 if ok then
                     result.definition = fixed_definition
                 else
-                    logger.warn("Dict's user provided funcion failed:", fixed_definition)
+                    logger.warn("Dict's user provided function failed:", fixed_definition)
                 end
             end
         else

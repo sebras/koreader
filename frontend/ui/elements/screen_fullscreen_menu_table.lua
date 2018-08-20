@@ -16,7 +16,7 @@ return {
     callback = function()
         local disabled_fullscreen = G_reader_settings:isTrue("disabled_fullscreen")
 
-        logger.dbg("screen_fullscreen_menu_table.lua:  Fullscreen swiching to: ", disabled_fullscreen)
+        logger.dbg("screen_fullscreen_menu_table.lua:  Fullscreen switching to: ", disabled_fullscreen)
         android.setFullscreen(disabled_fullscreen)
 
         local status_bar_height = android.getStatusBarHeight()

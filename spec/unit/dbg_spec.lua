@@ -14,7 +14,7 @@ describe("Dbg module", function()
         end
     end)
 
-    it("setup mt.__call and guard after tunrnOn is called", function()
+    it("setup mt.__call and guard after turnOn is called", function()
         dbg:turnOff()
         local old_call = getmetatable(dbg).__call
         local old_guard = dbg.guard

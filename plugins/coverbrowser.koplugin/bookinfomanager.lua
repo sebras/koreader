@@ -320,7 +320,7 @@ function BookInfoManager:extractBookInfo(filepath, cover_specs)
     -- This will be run in a subprocess
     -- We use a temporary directory for cre cache (that will not affect parent process),
     -- so we don't fill the main cache with books we're not actually reading
-    if not self.cre_cache_overriden then
+    if not self.cre_cache_overridden then
         -- We need to init engine (if no crengine book has yet been opened),
         -- so it does not reset our temporary cache dir when we first open
         -- a crengine book for extraction.
@@ -333,7 +333,7 @@ function BookInfoManager:extractBookInfo(filepath, cover_specs)
         local default_cre_storage_size_factor = 20 -- note: keep in sync with the one in credocument.lua
         cre.initCache(self.tmpcr3cache, 0, -- 0 = previous book caches are removed when opening a book
             true, G_reader_settings:readSetting("cre_storage_size_factor") or default_cre_storage_size_factor)
-        self.cre_cache_overriden = true
+        self.cre_cache_overridden = true
     end
 
     local directory, filename = splitFilePathName(filepath)
@@ -611,7 +611,7 @@ function BookInfoManager:extractInBackground(files)
     -- Run task in sub-process, and remember its pid
     local task_pid = util.runInSubProcess(task)
     if not task_pid then
-        logger.warn("Failed lauching background extraction sub-process (fork failed)")
+        logger.warn("Failed launching background extraction sub-process (fork failed)")
         return false -- let caller know it failed
     end
     table.insert(self.subprocesses_pids, task_pid)
@@ -875,7 +875,7 @@ Do you want to prune cache of removed books?]]
         end
     end
     UIManager:close(info)
-    info = InfoMessage:new{text = T(_("Processed %1 / %2 books.\n%3 extracted succesfully."), nb_done, nb_files, nb_success)}
+    info = InfoMessage:new{text = T(_("Processed %1 / %2 books.\n%3 extracted successfully."), nb_done, nb_files, nb_success)}
     UIManager:show(info)
 end
 

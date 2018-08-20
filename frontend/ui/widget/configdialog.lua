@@ -465,7 +465,7 @@ function ConfigOption:init()
                         self.config:onMakeDefault(self.options[c].name, self.options[c].name_text, self.options[c].values,
                             self.options[c].labels or self.options[c].args, arg)
                     end,
-                    show_parrent = self.config,
+                    show_parent = self.config,
                     enabled = enabled,
                 }
                 local position = current_item

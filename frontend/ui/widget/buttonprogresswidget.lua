@@ -75,7 +75,7 @@ function ButtonProgressWidget:update()
         table.insert(self.buttonprogress_content, button)
     end
 
-    UIManager:setDirty(self.show_parrent, function()
+    UIManager:setDirty(self.show_parent, function()
         return "ui", self.dimen
     end)
 end

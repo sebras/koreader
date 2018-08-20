@@ -27,7 +27,7 @@ describe("UIManager spec", function()
         assert.are.same(UIManager._task_queue[2].time, future2)
     end)
 
-    it("should calcualte wait_until properly in checkTasks routine", function()
+    it("should calculate wait_until properly in checkTasks routine", function()
         now = { util.gettime() }
         local future = { now[1] + 60000, now[2] }
         UIManager:quit()

@@ -228,7 +228,7 @@ function ReaderHyphenation:onReadSettings(config)
     -- Use the one manually set as fallback (with Hold)
     hyph_alg = G_reader_settings:readSetting("hyph_alg_fallback")
     if hyph_alg then
-        logger.dbg("Hyphenation: using fallback ", hyph_alg, ", might be overriden by doc language")
+        logger.dbg("Hyphenation: using fallback ", hyph_alg, ", might be overridden by doc language")
         self:setHyphAlgo(hyph_alg)
         return
     end
